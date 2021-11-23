@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="order"
+            type="com.nextinger.binancer.client.binance.dto.Order" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/itemOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryBackground"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_16dp"
+            android:layout_marginTop="@dimen/space_8dp"
+            android:layout_marginEnd="@dimen/space_16dp"
+            android:layout_marginBottom="@dimen/space_8dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            card_view:cardBackgroundColor="@color/colorSecondaryBackground"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space_16dp"
+                android:paddingTop="@dimen/space_16dp"
+                android:paddingEnd="@dimen/space_16dp"
+                android:paddingBottom="@dimen/space_16dp">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/symbol2_image_view"
+                        android:layout_width="@dimen/space_24dp"
+                        android:layout_height="@dimen/space_24dp"
+                        android:layout_marginStart="@dimen/space_16dp"
+                        android:src="@drawable/usdt" />
+
+                    <ImageView
+                        android:id="@+id/symbol1_image_view"
+                        android:layout_width="@dimen/space_24dp"
+                        android:layout_height="@dimen/space_24dp"
+                        android:src="@drawable/btc"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/symbolTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space_24dp"
+                    android:layout_marginStart="@dimen/space_8dp"
+                    android:gravity="center_vertical"
+                    android:text="@{order.symbol}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/space_16dp"
+                    app:layout_constraintStart_toEndOf="@+id/relativeLayout"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="ADA/USDT" />
+
+                <TextView
+                    android:id="@+id/priceTextView"
+                    setCurrencyValue="@{order.price}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="42.42" />
+
+                <TextView
+                    android:id="@+id/executedQtyTextView"
+                    setNumber="@{order.executedQty}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/priceTextView"
+                    app:layout_constraintEnd_toStartOf="@+id/qtySeparatorTextView"
+                    tools:text="1.0" />
+
+                <TextView
+                    android:id="@+id/qtySeparatorTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="/"
+                    android:textColor="@color/sub_text_grey"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/origQtyTextView"
+                    app:layout_constraintEnd_toStartOf="@+id/origQtyTextView"/>
+
+                <TextView
+                    android:id="@+id/origQtyTextView"
+                    setNumber="@{order.origQty}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/sub_text_grey"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toTopOf="@+id/priceTextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="1.0" />
+
+                <TextView
+                    android:id="@+id/typeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_8dp"
+                    android:text="@{order.typeSide}"
+                    android:textColor="@color/sub_text_grey"
+                    android:textSize="@dimen/font_14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+                    tools:text="LIMIT/BUY" />
+
+                <TextView
+                    android:id="@+id/statusTextView"
+                    android:text="@{order.status}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#0eca80"
+                    android:textSize="@dimen/font_14sp"
+                    app:layout_constraintBottom_toTopOf="@+id/executedQtyTextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="Filled" />
+
+                <TextView
+                    android:id="@+id/amountTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount"
+                    android:textColor="@color/sub_text_grey"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/typeTextView" />
+
+                <TextView
+                    android:id="@+id/priceTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price"
+                    android:textColor="@color/sub_text_grey"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/amountTitleTextView" />
+
+                <TextView
+                    android:id="@+id/timeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/space_24dp"
+                    android:gravity="center_vertical"
+                    setDate="@{order.time}"
+                    android:textColor="@color/sub_text_grey"
+                    android:textSize="@dimen/font_12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="15.1.2021 14:42:39" />
+
+<!--                <TextView-->
+<!--                    android:id="@+id/orderIdTextView"-->
+<!--                    setNumber="@{order.orderId}"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColor="@color/test"-->
+<!--                    android:textSize="@dimen/font_14sp"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/timeTextView"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/symbolTextView"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    tools:text="#479208" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item
+		android:id="@+id/navigation_ticker"
+		android:icon="@drawable/ic_leaderboard"
+		android:title="@string/ticker_title" />
+
+	<item
+		android:id="@+id/navigation_spot_wallet"
+		android:icon="@drawable/ic_wallet"
+		android:title="@string/spot_wallet_title" />
+
+	<item
+		android:id="@+id/navigation_order_history"
+		android:icon="@drawable/ic_inbox"
+		android:title="@string/order_history_title" />
+
+	<item
+		android:id="@+id/navigation_trade_history"
+		android:icon="@drawable/ic_receipt_long"
+		android:title="@string/trade_history_title" />
+
+</menu>

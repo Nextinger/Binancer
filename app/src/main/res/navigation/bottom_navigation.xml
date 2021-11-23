@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/bottom_navigation"
+	app:startDestination="@+id/navigation_spot_wallet">
+
+	<fragment
+		android:id="@+id/navigation_ticker"
+		android:name="com.nextinger.binancer.ui.ticker.TickerFragment"
+		android:label="@string/ticker_title"
+		tools:layout="@layout/fragment_ticker"/>
+
+	<fragment
+		android:id="@+id/navigation_spot_wallet"
+		android:name="com.nextinger.binancer.ui.spotwallet.SpotWalletFragment"
+		android:label="@string/spot_wallet_title"
+		tools:layout="@layout/fragment_spot_wallet" />
+
+	<fragment
+		android:id="@+id/navigation_order_history"
+		android:name="com.nextinger.binancer.ui.orderhistory.OrderHistoryFragment"
+		android:label="@string/order_history_title"
+		tools:layout="@layout/fragment_order_history" />
+
+
+	<fragment
+		android:id="@+id/navigation_trade_history"
+		android:name="com.nextinger.binancer.ui.tradehistory.TradeHistoryFragment"
+		android:label="@string/trade_history_title"
+		tools:layout="@layout/fragment_trade_history" />
+
+</navigation>

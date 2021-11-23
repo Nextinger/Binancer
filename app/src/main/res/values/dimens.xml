@@ -1,0 +1,26 @@
+<resources>
+    <dimen name="nav_header_height">176dp</dimen>
+    <!-- general spaces -->
+    <dimen name="space_4dp">4dp</dimen>
+    <dimen name="space_8dp">8dp</dimen>
+    <dimen name="space_12dp">12dp</dimen>
+    <dimen name="space_16dp">16dp</dimen>
+    <dimen name="space_24dp">24dp</dimen>
+    <dimen name="space_32dp">32dp</dimen>
+    <dimen name="space_40dp">40dp</dimen>
+    <dimen name="space_56dp">56dp</dimen>
+    <!-- general font sizes -->
+    <dimen name="font_10sp">10sp</dimen>
+    <dimen name="font_12sp">12sp</dimen>
+    <dimen name="font_14sp">14sp</dimen>
+    <dimen name="font_16sp">16sp</dimen>
+    <dimen name="font_20sp">20sp</dimen>
+    <dimen name="font_24sp">24sp</dimen>
+    <dimen name="font_34sp">34sp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+</resources>

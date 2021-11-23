@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/purple_700"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/space_16dp"
+    android:paddingEnd="@dimen/space_16dp"
+    android:paddingBottom="@dimen/space_8dp"
+    tools:context=".ui.orderhistory.FilterOrderHistoryFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_8dp"
+        android:text="@string/sort_by"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:id="@+id/sort_by_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/space_16dp"
+        android:paddingTop="@dimen/space_8dp">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/oldest_radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/space_16dp"
+            android:paddingTop="@dimen/space_8dp"
+            android:paddingEnd="0dp"
+            android:text="@string/newest_transaction"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_16sp"
+            app:buttonTint="@color/white" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/newest_radio_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/space_16dp"
+            android:paddingEnd="0dp"
+            android:text="@string/oldest_transaction"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_16sp"
+            app:buttonTint="@android:color/white" />
+    </RadioGroup>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

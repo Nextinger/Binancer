@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="asset"
+            type="com.nextinger.binancer.data.objects.Asset" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/itemBalance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryBackground"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_16dp"
+            android:layout_marginTop="@dimen/space_8dp"
+            android:layout_marginEnd="@dimen/space_16dp"
+            android:layout_marginBottom="@dimen/space_8dp"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            card_view:cardBackgroundColor="@color/colorSecondaryBackground"
+            card_view:cardCornerRadius="4dp"
+            card_view:cardElevation="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/space_8dp"
+                android:paddingTop="@dimen/space_8dp"
+                android:paddingEnd="@dimen/space_16dp"
+                android:paddingBottom="@dimen/space_8dp">
+
+<!--                <TextView-->
+<!--                    android:id="@+id/position_text_view"-->
+<!--                    android:layout_width="28dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/font_14sp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    tools:text="1."-->
+<!--                    android:gravity="end"/>-->
+
+                <ImageView
+                    android:id="@+id/symbol_image_view"
+                    setSymbolImage="@{asset.symbol}"
+                    android:layout_width="@dimen/space_32dp"
+                    android:layout_height="@dimen/space_32dp"
+                    android:layout_marginStart="@dimen/space_16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/btc"/>
+
+                <LinearLayout
+                    android:id="@+id/left_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/symbol_image_view"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/symbol_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:text="@{asset.symbol}"
+                        android:textSize="@dimen/font_16sp"
+                        tools:text="BTC" />
+
+                    <TextView
+                        android:id="@+id/currency_name_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/sub_text_grey"
+                        android:text="@{asset.name}"
+                        android:textSize="@dimen/font_14sp"
+                        tools:text="Bitcoin"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/unit_price_text_view"
+                    android:text="@{asset.formattedUnitPrice}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_16sp"
+                    tools:text="$69000.00"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</layout>
